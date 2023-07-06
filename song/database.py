@@ -1,5 +1,6 @@
 import pandas as pd
 import sqlite3
+pd.set_option("display.max_columns", None)
 
 class DataBase:
     def __init__(self):
@@ -132,11 +133,24 @@ class DataBase:
         self.conn = sqlite3.connect("main_db")
         self.conn.execute('PRAGMA foreign_keys = on')
         self.cur = self.conn.cursor()
-        self.cur.execute('SELECT * from common inner join trip_place_sub on common.id == trip_place_sub.id')
-        rows = self.cur.fetchall()
-        for row in rows:
-            print(row)
 
+        # 화면 출력
+        # self.cur.execute('SELECT * from common inner join trip_place_sub on common.id == trip_place_sub.id')
+        # rows = self.cur.fetchall()
+        # for row in rows:
+        #     print(row)
+
+        # 데이터 프레임으로 main_db의 테이블 저장
+        self.common_table = pd.read_sql('SELECT * from common', self.conn)
+        self.trip_place_sub_table = pd.read_sql('SELECT * from trip_place_sub', self.conn)
+        self.restaurant_sub_table = pd.read_sql('SELECT * from restaurant_sub', self.conn)
+        self.accommodation_sub_table = pd.read_sql('SELECT * from accommodation_sub', self.conn)
+        self.recommend_table = pd.read_sql('SELECT * from recommend', self.conn)
+        self.member_table = pd.read_sql('SELECT * from member', self.conn)
+        self.schedule_table = pd.read_sql('SELECT * from schedule', self.conn)
+        self.metro_table = pd.read_sql('SELECT * from metro', self.conn)
+
+        self.conn.close()
 
 
 if __name__ == "__main__":
