@@ -5,7 +5,7 @@ pd.set_option("display.max_columns", None)
 class DataBase:
     def __init__(self):
         # 데이터 불러오기
-        """
+
         self.common_data = pd.read_csv("./data/common_data.csv")
         self.accommodation_sub_data = pd.read_csv("./data/accommodation_sub_data.csv")
         self.restaurant_sub_data = pd.read_csv("./data/restaurant_sub_data.csv")
@@ -127,12 +127,15 @@ class DataBase:
 
         self.conn.commit()
         self.conn.close()
-        """
 
+
+        """
         # 로드 테스트
         self.conn = sqlite3.connect("main_db")
         self.conn.execute('PRAGMA foreign_keys = on')
         self.cur = self.conn.cursor()
+        self.total_trip_data = pd.read_sql('SELECT * from common inner join trip_place_sub on common.id == trip_place_sub.id', self.conn)
+        print(self.total_trip_data)
 
         # 화면 출력
         # self.cur.execute('SELECT * from common inner join trip_place_sub on common.id == trip_place_sub.id')
@@ -151,7 +154,7 @@ class DataBase:
         self.metro_table = pd.read_sql('SELECT * from metro', self.conn)
 
         self.conn.close()
-
+        """
 
 if __name__ == "__main__":
     data_base_object = DataBase()

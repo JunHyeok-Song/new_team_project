@@ -129,7 +129,57 @@ class PreprocessTable:
         #
         # self.trip_place_sub_data = self.tourist_attractions_data[common_columns_list]
         # self.trip_place_sub_data.to_csv("./data/trip_place_sub_data.csv", index=False)
+
+
+        # ====================================================================================================================
+        # 이미지 주소 값 변경
+        # new_address = "C:/Users/kdt111/Desktop/work/TeamProject44/park/image_/accommodation_data_image/"
+        # self.accommodation_data = pd.read_csv("./data/accommodation_data.csv")
+        # self.accommodation_sub_data = pd.read_csv("./data/accommodation_sub_data.csv")
+        # accommodation_name_list = list(self.accommodation_data["name"].values)
+        # new_image_address_list = list()
+        # for name in accommodation_name_list:
+        #     new_image_address_list.append(f"{new_address}{name}.png")
+        #
+        # temp = pd.DataFrame(new_image_address_list, columns=["image_address"])
+        # self.accommodation_sub_data.drop("image_address", axis=1, inplace=True)
+        # self.accommodation_sub_data = pd.concat([self.accommodation_sub_data, temp], axis=1)
+        # self.accommodation_sub_data.to_csv("./data/accommodation_sub_data.csv", index=False)
+
+
+
+        # self.restaurant_sub_data = pd.read_csv("./data/restaurant_sub_data.csv")
+        # new_address = "C:/Users/kdt111/Desktop/work/TeamProject44/park/image_/restaurant_data_image/"
+        # self.restaurant_data = pd.read_csv("./data/restaurant_data.csv")
+        # self.restaurant_sub_data = pd.read_csv("./data/restaurant_sub_data.csv")
+        # restaurant_name_list = list(self.restaurant_data["name"].values)
+        # new_image_address_list = list()
+        # for name in restaurant_name_list:
+        #     new_image_address_list.append(f"{new_address}{name}.png")
+        #
+        # temp = pd.DataFrame(new_image_address_list, columns=["image_address"])
+        # self.restaurant_sub_data.drop("image_address", axis=1, inplace=True)
+        # self.restaurant_sub_data = pd.concat([self.restaurant_sub_data, temp], axis=1)
+        # self.restaurant_sub_data.to_csv("./data/restaurant_sub_data.csv", index=False)
+
+
+        # self.trip_place_sub_data = pd.read_csv("./data/trip_place_sub_data.csv")
+        # new_address = "C:/Users/kdt111/Desktop/work/TeamProject44/park/image_/tourist_attraction_data_image/"
+        # self.tourist_attractions_data = pd.read_csv("./data/tourist_attractions_data.csv")
+        # self.trip_place_sub_data = pd.read_csv("./data/trip_place_sub_data.csv")
+        # trip_place_name_list = list(self.tourist_attractions_data["name"].values)
+        # new_image_address_list = list()
+        # for name in trip_place_name_list:
+        #     new_image_address_list.append(f"{new_address}{name}.png")
+        #
+        # temp = pd.DataFrame(new_image_address_list, columns=["image_address"])
+        # self.trip_place_sub_data.drop("image_address", axis=1, inplace=True)
+        # self.trip_place_sub_data = pd.concat([self.trip_place_sub_data, temp], axis=1)
+        # self.trip_place_sub_data.to_csv("./data/trip_place_sub_data.csv", index=False)
         pass
+
+
+
 
 
 
