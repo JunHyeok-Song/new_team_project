@@ -27,7 +27,7 @@ class PreprocessTable:
         # self.accommodation_id_data = pd.DataFrame(number_list, columns=["id"])
         # self.accommodation_data = pd.concat([self.accommodation_id_data, self.accommodation_data], axis=1)
         # self.accommodation_data.to_csv("./data/accommodation_data.csv", index=False)
-
+        #
         # 음식점 id 넣기
         # number_list = list()
         # for i in range(len(self.restaurant_data)):
@@ -36,7 +36,7 @@ class PreprocessTable:
         # self.restaurant_data = pd.concat([self.restaurant_id_data, self.restaurant_data], axis=1)
         # self.restaurant_data.to_csv("./data/restaurant_data.csv", index=False)
         # print(self.restaurant_data)
-
+        #
         # 관광지 id 넣기
         # number_list = list()
         # for i in range(len(self.tourist_attractions_data)):
@@ -55,7 +55,7 @@ class PreprocessTable:
         # self.restaurant_data = pd.read_csv("./data/restaurant_data.csv")
         # tourist_attractions_location = "C:/Users/KDT02/Desktop/new_team_project_1/image/tourist_attractions_data_image/"
         # self.tourist_attractions_data = pd.read_csv("./data/tourist_attractions_data.csv")
-
+        #
         # # 숙박업 이미지 주소값 넣기
         # image_address_list = list()
         # for i in range(len(self.accommodation_data)):
@@ -63,7 +63,7 @@ class PreprocessTable:
         # self.image_address_data = pd.DataFrame(image_address_list, columns=["image_address"])
         # self.accommodation_data = pd.concat([self.accommodation_data, self.image_address_data], axis=1)
         # self.accommodation_data.to_csv("./data/accommodation_data.csv", index=False)
-
+        #
         # # 음식점 이미지 주소값 넣기
         # image_address_list = list()
         # for i in range(len(self.restaurant_data)):
@@ -71,7 +71,7 @@ class PreprocessTable:
         # self.image_address_data = pd.DataFrame(image_address_list, columns=["image_address"])
         # self.restaurant_data = pd.concat([self.restaurant_data, self.image_address_data], axis=1)
         # self.restaurant_data.to_csv("./data/restaurant_data.csv", index=False)
-
+        #
         # 음식점 이미지 주소값 넣기
         # image_address_list = list()
         # for i in range(len(self.tourist_attractions_data)):
@@ -102,7 +102,7 @@ class PreprocessTable:
         # self.accommodation_data = pd.read_csv("./data/accommodation_data.csv")
         # self.restaurant_data = pd.read_csv("./data/restaurant_data.csv")
         # self.tourist_attractions_data = pd.read_csv("./data/tourist_attractions_data.csv")
-
+        #
         # common_columns_list = ['id', 'brought', 'name', 'address', 'latitude', 'longitude', 'contact_number']
         # self.accommodation_common_data = self.accommodation_data[common_columns_list]
         # self.restaurant_common_data = self.restaurant_data[common_columns_list]
@@ -110,7 +110,7 @@ class PreprocessTable:
         #
         # self.common_data = pd.concat([self.accommodation_common_data, self.restaurant_common_data, self.tourist_attractions_data], ignore_index=True)
         # self.common_data.to_csv("./data/common_data.csv", index=False)
-
+        #
         # ====================================================================================================================
         # ERD에 맞춰서 데이터프레임 분할하기.
         # self.accommodation_data = pd.read_csv("./data/accommodation_data.csv")
@@ -145,9 +145,8 @@ class PreprocessTable:
         # self.accommodation_sub_data.drop("image_address", axis=1, inplace=True)
         # self.accommodation_sub_data = pd.concat([self.accommodation_sub_data, temp], axis=1)
         # self.accommodation_sub_data.to_csv("./data/accommodation_sub_data.csv", index=False)
-
-
-
+        #
+        #
         # self.restaurant_sub_data = pd.read_csv("./data/restaurant_sub_data.csv")
         # new_address = "C:/Users/kdt111/Desktop/work/TeamProject44/park/image_/restaurant_data_image/"
         # self.restaurant_data = pd.read_csv("./data/restaurant_data.csv")
@@ -161,8 +160,8 @@ class PreprocessTable:
         # self.restaurant_sub_data.drop("image_address", axis=1, inplace=True)
         # self.restaurant_sub_data = pd.concat([self.restaurant_sub_data, temp], axis=1)
         # self.restaurant_sub_data.to_csv("./data/restaurant_sub_data.csv", index=False)
-
-
+        #
+        #
         # self.trip_place_sub_data = pd.read_csv("./data/trip_place_sub_data.csv")
         # new_address = "C:/Users/kdt111/Desktop/work/TeamProject44/park/image_/tourist_attraction_data_image/"
         # self.tourist_attractions_data = pd.read_csv("./data/tourist_attractions_data.csv")

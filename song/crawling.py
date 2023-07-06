@@ -15,24 +15,65 @@ class Crawling:
     def __init__(self):
         self.dnum = 0
 
+        # self.temp_list = list()
+        # accommodation_data = pd.read_csv("./data/accommodation_data.csv", encoding='cp949')
+        # print(accommodation_data)
+        # accommodation_data_list = list(accommodation_data["업체명"].values)
+        #
+        # address_list = list()
+        # image_directory = 'C:/Users/KDT02/Desktop/new_team_project_1/image/accommodation_data_image/'
+        # WEB_DRIVER_PATH = "C:/Users/KDT02/Desktop/chromedriver_win32/chromedriver.exe"
+        # s = Service(WEB_DRIVER_PATH)
+        # driver = webdriver.Chrome(service=s)
+        # driver.get("https://www.google.com/search?q=test&hl=ko&tbm=isch&source=hp&biw=1920&bih=969&ei=MB6lZJSJBq-m2roPmcSU-AE&iflsig=AD69kcEAAAAAZKUsQL8gqju5BcU9E9s6OiI7KGjQSbLe&ved=0ahUKEwiU4YX_h_f_AhUvk1YBHRkiBR8Q4dUDCAc&uact=5&oq=test&gs_lcp=CgNpbWcQAzIICAAQgAQQsQMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BAgAEAM6CAgAELEDEIMBOgsIABCABBCxAxCDAVAAWI0CYLQFaABwAHgAgAGmAYgB7gSSAQMwLjSYAQCgAQGqAQtnd3Mtd2l6LWltZw&sclient=img")
+        # # XPATH와 FULLXPATH와는 다르구나. FULLXPATH로 하니까 되네...
+        # for idx, name in enumerate(accommodation_data_list):
+        #     try:
+        #         input_box = WebDriverWait(driver, timeout=60).until(
+        #             lambda d: d.find_element(By.XPATH, '//*[@id="REsRA"]'))
+        #         input_box.clear()
+        #         input_box.send_keys(f"부산시 {name}")
+        #         input_box.send_keys(Keys.RETURN)
+        #
+        #         first_image = WebDriverWait(driver, timeout=60).until(
+        #             lambda d: d.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[1]/a[1]/div[1]/img'))
+        #
+        #         first_image.click()
+        #         big_image = WebDriverWait(driver, timeout=60).until(
+        #             lambda d: d.find_element(By.XPATH, '//*[@id="Sva75c"]/div[2]/div[2]/div[2]/div[2]/c-wiz/div/div/div/div[3]/div[1]/a/img[1]'))
+        #
+        #         big_image_url = big_image.get_attribute('src')
+        #         request.urlretrieve(big_image_url, image_directory + f"{name}.png")
+        #         address_list.append(image_directory + f"{name}.png")
+        #         print(address_list[-1])
+        #     except Exception as e:
+        #         address_list.append("-")
+        #         print(idx, name, e)
+        self.dnum = 0
+
         self.temp_list = list()
-        accommodation_data = pd.read_csv("./data/accommodation_data.csv", encoding='cp949')
-        print(accommodation_data)
-        accommodation_data_list = list(accommodation_data["업체명"].values)
+        self.temp_list_pure_name = list()
+        restaurant_data = pd.read_csv("./data/restaurant_data.csv")
+        print(restaurant_data)
+        restaurant_location_data = list(restaurant_data["brought"].values)
+        restaurant_trip_name_data = list(restaurant_data["name"].values)
+        for location, trip_name in zip(restaurant_location_data, restaurant_trip_name_data):
+            self.temp_list.append(location + " " + trip_name)
+            self.temp_list_pure_name.append(trip_name)
 
         address_list = list()
-        image_directory = 'C:/Users/KDT02/Desktop/new_team_project_1/image/accommodation_data_image/'
+        image_directory = 'C:/Users/KDT02/Desktop/new_team_project_1/image/restaurant_data_image/'
         WEB_DRIVER_PATH = "C:/Users/KDT02/Desktop/chromedriver_win32/chromedriver.exe"
         s = Service(WEB_DRIVER_PATH)
         driver = webdriver.Chrome(service=s)
         driver.get("https://www.google.com/search?q=test&hl=ko&tbm=isch&source=hp&biw=1920&bih=969&ei=MB6lZJSJBq-m2roPmcSU-AE&iflsig=AD69kcEAAAAAZKUsQL8gqju5BcU9E9s6OiI7KGjQSbLe&ved=0ahUKEwiU4YX_h_f_AhUvk1YBHRkiBR8Q4dUDCAc&uact=5&oq=test&gs_lcp=CgNpbWcQAzIICAAQgAQQsQMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BAgAEAM6CAgAELEDEIMBOgsIABCABBCxAxCDAVAAWI0CYLQFaABwAHgAgAGmAYgB7gSSAQMwLjSYAQCgAQGqAQtnd3Mtd2l6LWltZw&sclient=img")
         # XPATH와 FULLXPATH와는 다르구나. FULLXPATH로 하니까 되네...
-        for idx, name in enumerate(accommodation_data_list):
+        for total_name, name in zip(self.temp_list, self.temp_list_pure_name):
             try:
                 input_box = WebDriverWait(driver, timeout=60).until(
                     lambda d: d.find_element(By.XPATH, '//*[@id="REsRA"]'))
                 input_box.clear()
-                input_box.send_keys(f"부산시 {name}")
+                input_box.send_keys(f"{total_name}")
                 input_box.send_keys(Keys.RETURN)
 
                 first_image = WebDriverWait(driver, timeout=60).until(
@@ -48,7 +89,12 @@ class Crawling:
                 print(address_list[-1])
             except Exception as e:
                 address_list.append("-")
-                print(idx, name, e)
+                print(name, e)
+
+
+
+
+
 
             # if idx == len(tourist_attractions_name_data):
             #     address_list_df = pd.DataFrame(address_list, columns=["이미지"])
