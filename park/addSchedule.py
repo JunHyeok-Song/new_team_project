@@ -15,6 +15,7 @@ class AddSchedule_Function(QWidget, addwidget_function):
         self.setupUi(self)
     def add_result_function(self, image, name, info, long_adr, short_adr, num):
         """실 호출 함수"""
+        print(image)
         self.label.setPixmap(QPixmap(image))
         self.label_2.setText(name)
         self.label_3.setText(info)

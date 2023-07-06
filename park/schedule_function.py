@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'schedule_function.ui'
+# Form implementation generated from reading image_ file 'schedule_function.image_'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #

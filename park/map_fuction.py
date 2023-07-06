@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'map_fuction.ui'
+# Form implementation generated from reading image_ file 'map_fuction.image_'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
