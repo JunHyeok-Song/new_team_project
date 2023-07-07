@@ -91,7 +91,7 @@ class DataBase:
         self.conn.execute('CREATE TABLE IF NOT EXISTS metro'
                           '(first_station varchar(255), '
                           'second_station varchar(255), '
-                          'distance integer)')
+                          'distance_integer)')
 
         # self.conn.execute('CREATE TABLE IF NOT EXISTS metro'
         #                   '(station_id varchar(255) PRIMARY KEY, '
@@ -134,6 +134,14 @@ class DataBase:
         for index, row in self.recommend_data.iterrows():
             insert_data = list(row.values)
             self.cur.execute('INSERT INTO recommend(id, name, ten, twenty, thirty, fourty, fifty, sixty) VALUES(?, ?, ?, ?, ?, ?, ?, ?)', insert_data)
+
+        # self.recommend_data = pd.read_csv("./data/recommend_data.csv")
+        # for index, row in self.recommend_data.iterrows():
+        #     insert_data = list(row.values)
+        #     self.cur.execute(
+        #         'INSERT INTO recommend(id, name, ten, twenty, thirty, fourty, fifty, sixty) VALUES(?, ?, ?, ?, ?, ?, ?, ?)',
+        #         insert_data)
+
 
         self.conn.commit()
         self.conn.close()
