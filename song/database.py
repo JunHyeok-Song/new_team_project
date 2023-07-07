@@ -83,15 +83,25 @@ class DataBase:
                           'FOREIGN KEY (user_id) REFERENCES member (user_id), '
                           'FOREIGN KEY (contents_id) REFERENCES common (id))')
 
-        self.conn.execute('CREATE TABLE IF NOT EXISTS metro'
-                          '(station_id varchar(255) PRIMARY KEY, '
-                          'line_number varchar(255), '
-                          'station_name varchar(255), '
-                          'station_address varchar(255), '
+        self.conn.execute('CREATE TABLE IF NOT EXISTS metrolocation'
+                          '(station_name varchar(255), '
                           'station_latitude float, '
-                          'station_longitude float, '
-                          'between_distance float, '
-                          'between_time float)')
+                          'station_longitude float)')
+
+        self.conn.execute('CREATE TABLE IF NOT EXISTS metro'
+                          '(first_station varchar(255), '
+                          'second_station varchar(255), '
+                          'distance integer)')
+
+        # self.conn.execute('CREATE TABLE IF NOT EXISTS metro'
+        #                   '(station_id varchar(255) PRIMARY KEY, '
+        #                   'line_number varchar(255), '
+        #                   'station_name varchar(255), '
+        #                   'station_address varchar(255), '
+        #                   'station_latitude float, '
+        #                   'station_longitude float, '
+        #                   'between_distance float, '
+        #                   'between_time float)')
 
         # 데이터 넣기.
         self.conn = sqlite3.connect("main_db")
@@ -107,13 +117,13 @@ class DataBase:
             insert_data = list(row.values)
             self.cur.execute(
                 'INSERT INTO accommodation_sub(id, detail, image_address) VALUES(?, ?, ?)', insert_data)
-            
+
         self.restaurant_sub_data = pd.read_csv("./data/restaurant_sub_data.csv")
         for index, row in self.restaurant_sub_data.iterrows():
             insert_data = list(row.values)
             self.cur.execute(
                 'INSERT INTO restaurant_sub(id, detail, image_address) VALUES(?, ?, ?)', insert_data)
-            
+
         self.trip_place_sub_data = pd.read_csv("./data/trip_place_sub_data.csv")
         for index, row in self.trip_place_sub_data.iterrows():
             insert_data = list(row.values)

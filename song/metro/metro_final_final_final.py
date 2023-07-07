@@ -11,7 +11,6 @@ def nodes(gr):
     return sorted(node)
 
 class MainClass:
-
     def __init__(self):
         self.node = nodes(graph)
         self.station_list = list()
