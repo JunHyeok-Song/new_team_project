@@ -91,8 +91,6 @@ class DataBase:
         # 데이터베이스에 적재 -> 만든 ERD에 맞춰서
         pass
 
-
-
 if __name__ == "__main__":
     preprocessing_object = Preprocess()
 

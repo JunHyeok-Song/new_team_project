@@ -10,7 +10,7 @@ class ExtractAndCalculate:
         # 노선 최적결과 계산 객체 생성
         self.obj = metro_final_final_final.MainClass()
         distance_optimization_object = metro_final_final_final.MainClass()
-        self.metro_location_data_list = self.obj.getTotalLocation()[:-6]
+        self.metro_location_data_list = self.obj.getTotalLocation()
         self.metro_name_data_list = self.obj.getTotalName()
         self.metro_term_data = self.obj.getGraph()
         self.calculate_result_about_distance = list()
