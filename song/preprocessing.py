@@ -7,8 +7,6 @@
 음식점 -> 부산광역시_부산맛집정보 서비스.xlsx
 """
 
-
-
 import pandas as pd
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_rows", None)

@@ -133,7 +133,7 @@ class PreprocessTable:
 
         # ====================================================================================================================
         # 이미지 주소 값 변경
-        # new_address = "C:/Users/kdt111/Desktop/work/TeamProject44/park/image_/accommodation_data_image/"
+        # new_address = "C:/Users/KDT113/Desktop/pythonProject/pythonstudy/trip_pj/image/accommodation_data_image/"
         # self.accommodation_data = pd.read_csv("./data/accommodation_data.csv")
         # self.accommodation_sub_data = pd.read_csv("./data/accommodation_sub_data.csv")
         # accommodation_name_list = list(self.accommodation_data["name"].values)
@@ -148,7 +148,7 @@ class PreprocessTable:
         #
         #
         # self.restaurant_sub_data = pd.read_csv("./data/restaurant_sub_data.csv")
-        # new_address = "C:/Users/kdt111/Desktop/work/TeamProject44/park/image_/restaurant_data_image/"
+        # new_address = "C:/Users/KDT113/Desktop/pythonProject/pythonstudy/trip_pj/image/restaurant_data_image/"
         # self.restaurant_data = pd.read_csv("./data/restaurant_data.csv")
         # self.restaurant_sub_data = pd.read_csv("./data/restaurant_sub_data.csv")
         # restaurant_name_list = list(self.restaurant_data["name"].values)
@@ -163,7 +163,7 @@ class PreprocessTable:
         #
         #
         # self.trip_place_sub_data = pd.read_csv("./data/trip_place_sub_data.csv")
-        # new_address = "C:/Users/kdt111/Desktop/work/TeamProject44/park/image_/tourist_attraction_data_image/"
+        # new_address = "C:/Users/KDT113/Desktop/pythonProject/pythonstudy/trip_pj/image/tourist_attractions_data_image/"
         # self.tourist_attractions_data = pd.read_csv("./data/tourist_attractions_data.csv")
         # self.trip_place_sub_data = pd.read_csv("./data/trip_place_sub_data.csv")
         # trip_place_name_list = list(self.tourist_attractions_data["name"].values)
